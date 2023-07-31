@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="has-background-black-ter">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D&D 5e Random Character Generator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+  <body class="content container has-text-centered">
+
+    <header>
+      <h1 class="title is-2 has-text-warning">D&D 5e Character Generator</h1>
+      <h2 class="subtitle has-text-danger">A tool to create a truly random PC </h2>
+    </header>
+
+    <main class="tile is-ancestor"> <!-- area for input options and where generated character appears-->
+      <div class="tile is-parent" id="inputSelection">
+        <article class="tile is-child box has-background-info">
+          
+          <p class="is-size-5">For a truly random character, hit the "Randomize" button. Let us pick your race, class, and roll those 4d6kh3 dice for you!</p>
+          <button class="button" id="randomize-btn">Randomize</button>
+          <p></p>
+
+          <p class="is-size-5 pl-6 pr-6">If you have some idea of what you want your character to be, make a few selections and press the "Generate" button.</p>
+          <p class="title w">Please Select a Race and Class</p>
+          <div id="error-modal" class="modal error-modal">
+            <div class="modal-background"></div>
+          
+            <div class="modal-content">
+              <div class="box">
+                Please select both a Race and Class
+              </div>
+            </div>
+          
+            <button class="modal-close is-large" aria-label="close" id="modal-close"></button>
+          </div>
+          
+
+          <label for="class-select">Select a Class</label>
+          <select name="class" id="class-select" class="dropdown">
+            <option class="dropdown-option" value="">--Select a Class--</option>
+          </select>
+
+          <label for="race-select">Select a Race</label>
+          <select name="race" id="race-select" class="dropdown">
+           <option class="dropdown-option" value="">--Select a Race--</option>
+          </select>
+          <p></p>
+          <button class="button js-modal-trigger" id="generate-btn">Generate</button>
+        </article>
+      </div>
+
+      <section class="tile is-parent hidden" id="resultsDisplay"> <!-- Area to display character generation results-->
+        <div class="tile is-child box has-background-info">
+          <p id="character-race" style="display:none"></p>
+          <p id="character-class" style="display:none"></p> 
+          <div id="output"></div>    
+        </div>
+      </section>
+
+        <article class="tile is-parent is-4 hidden" id="avatarDisplay"> <!-- Area to display avatar -->
+            <div class="tile is-child box has-background-danger">
+              <p class="title w">Random Avatar</p>
+              <p class="subtitle w">Do you like it? We made it just for you!</p> 
+              <!--adds base avatar img from the api-->
+              <img id="frame" src="https://api.dicebear.com/5.x/adventurer/svg" alt= "avatar">
+              <button onclick="randomAvatar()" class="button" id="gen" >Randomize</button>
+            </div>
+          </article>
+    </main> 
+  
+
+  <footer class="has-text-centered">  <!-- Area to display buttons to save/load characters-->
+    <button onclick="handleSaveClick()" id="saveShow" class="button is-warning is-medium is-outlined hidden">Save Your Character</button>
+    <button onclick="retrieveSavedCharacter()" class="button is-warning is-medium is-outlined">Load Your Character</button>
+    <button onclick="clearAll()" class="button is-warning is-medium is-outlined">Clear All</button>
+    <button onclick="goBack()" id="goBackShow" class="button is-warning is-medium is-outlined hidden">New Character</button>
+    <ol id="character-list"></ol>
+  </footer>    
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="./assets/js/script.js" > </script>
+  <script src="./assets/js/dice.js" > </script>
+
+  </body>
+</html>
