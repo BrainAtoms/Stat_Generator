@@ -2,6 +2,8 @@
 
 ## Link to Deployed Project
 
+https://brainatoms.github.io/Stat_Generator/
+
 ## Screenshot of Deployed Application
 
 ![Screenshot of Input Page](assets/images/demoscreenshot1.PNG)
