@@ -72,7 +72,7 @@ Thomas Shea - Pair Programmed with Ian to utilize the D&D5e API to create the ma
 
 Ian Heap - Pair Programmed with Thomas to utilize the D&D5e APU to create the main functionality of the webpage. 
 
-Brian Adams - Created the webpage's save and load function, as well as other small features and bug fixes. 
+Brian Adams - Created the webpage's save and load function using local storage, as well as other small features and bug fixes. 
 
 Collaboration - It's difficult to nail down exact division of work because this webpage was an extreme team effort. Everyone helped pair program and debug others code, so effort (particurally Ian's) may not be accurately reflects in commits /pull requests. 
 
