@@ -256,7 +256,7 @@ function retrieveSavedCharacter() {
   console.log(characterArr);
   console.log("retrieveSavedCharacter");
 
-  for (i = 0; i < 1; i++) {
+  for (i = 0; i < 5; i++) {
     let savedCharacter = document.createElement("li");
     const characterText = `class: ${characterArr[i].class + ","} race: ${
       characterArr[i].race + ","
